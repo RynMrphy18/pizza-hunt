@@ -1,6 +1,6 @@
 let db;
 
-const request = indexedDb.open("pizza_hunt", 1);
+const request = indexedDB.open("pizza_hunt", 1);
 
 request.onupgradeneeded = function(event) {
     const db = event.target.result;
@@ -11,7 +11,7 @@ request.onsuccess = function(event) {
     db = event.target.result;
 
     if (navigator.onLine) {
-        uploadPizza();
+        // uploadPizza();
     }
 };
 
