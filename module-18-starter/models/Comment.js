@@ -9,10 +9,13 @@ const ReplySchema = new Schema(
         default: () => new Types.ObjectId()
     },
     replyBody: {
-        type: String
+        type: String,
+        required: "You need to tell us what you're trying to say!",
+        trim: true
     },
     writtenBy: {
-        type: String
+        type: String,
+        required: "You need to tell us who wrote this!"
     },
     createdAt: {
         type: Date,
@@ -33,7 +36,8 @@ const CommentSchema = new Schema(
         type: String
     },
     commentBody: {
-        type: String
+        type: String,
+        required: "Wat"
     },
     createdAt: {
         type: Date,
